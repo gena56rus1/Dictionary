@@ -34,10 +34,10 @@ namespace EnglishDictionary.Controllers
 
 
         //работает
-        //[Authorize]
-        //public IActionResult Index()
-        //{
-        //    return View(User.Identity.Name);
-        //}
+        [Authorize]
+        public IActionResult _Layout()
+        {
+            return View();
+        }
     }
 }
