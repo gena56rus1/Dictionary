@@ -15,41 +15,32 @@ else
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>EnglishDictionary</title>
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/menu.css"/>
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand">@DateTime.Now.Hour : @DateTime.Now.Minute</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+            <nav class="one">
+                <ul class="topmenu">
+                    <li>@DateTime.Now</li>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="EngRusDictionary" asp-action="SearchWord">EngRusDictionary</a></li>
+                    <li><a asp-controller="RusEngDictionary" asp-action="RusEngDictionary">RusEngDictionary</a></li>
+                    <li><a asp-controller="EngExplanatoryDictionary" asp-action="EngExplanatoryDictionary">EngExplanatoryDictionary</a></li>
+                    <li><a asp-controller="RusExplanatoryDictionary" asp-action="RusExplanatoryDictionary">RusExplanatoryDictionary</a></li>
+                    <li class="position">
+                        <a asp-controller="Account" asp-action="Login">@userName<i class="fa fa-angle-down"></i></a>
+                        <ul class="submenu">
+                            <li>
+                                <a asp-controller="Account" asp-action="Profile">My profile</a>
+
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="EngRusDictionary" asp-action="EngRusDictionary">EngRusDictionary</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="RusEngDictionary" asp-action="RusEngDictionary">RusEngDictionary</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="EngExplanatoryDictionary" asp-action="EngExplanatoryDictionary">EngExplanatoryDictionary</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="RusExplanatoryDictionary" asp-action="RusExplanatoryDictionary">RusExplanatoryDictionary</a>
+                            <li>
+                                <a asp-controller="Account" asp-action="Exit">Exit</a>
                             </li>
                         </ul>
-                    </div>
-                    <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">@userName</a>
-                </div>
+                    </li>
+                </ul>
             </nav>
-
         </header>
         <div class="container">
             <main role="main" class="pb-3">

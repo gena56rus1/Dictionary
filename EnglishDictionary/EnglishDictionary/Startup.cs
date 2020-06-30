@@ -25,13 +25,14 @@ namespace EnglishDictionary
             connection = Configuration.GetConnectionString("DefaultConnection");
 
             services.AddControllersWithViews();
-            services.AddDbContext<MyDbContext>(options => options.UseSqlServer(connection));
-
+            
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
              .AddCookie(options =>
              {
                  options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
              });
+            services.AddDbContext<MyDbContext>(options => options.UseSqlServer(connection));
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

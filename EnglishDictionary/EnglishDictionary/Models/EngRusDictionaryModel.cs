@@ -1,6 +1,6 @@
 ﻿namespace EnglishDictionary.Models
 {
-    public class Dictionary
+    public class EngRusDictionaryModel
     {
         public int Id { get; set; }
         public string Word { get; set; }
