@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace EnglishDictionary.Models
 {
-    public class ExplanatoryDictionary
+    public class RusExplanatoryDictionaryModel
     {
         public int Id { get; set; }
         public string Word { get; set; }
         public string Interpretation { get; set; }
+        public int UserId { get; set; }
     }
 }

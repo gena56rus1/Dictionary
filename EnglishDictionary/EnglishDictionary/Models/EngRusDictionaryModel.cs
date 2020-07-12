@@ -6,5 +6,6 @@
         public string Word { get; set; }
         public string Transcription { get; set; }
         public string Translation { get; set; }
+        public int UserId { get; set; }
     }
 }

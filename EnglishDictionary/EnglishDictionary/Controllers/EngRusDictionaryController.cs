@@ -16,7 +16,6 @@ namespace EnglishDictionary.Controllers
     {
         
         private MyDbContext db;
-        private EngRusDictionaryModel model = new EngRusDictionaryModel();
         public EngRusDictionaryController(MyDbContext context)
         {
             db = context;
@@ -29,21 +28,24 @@ namespace EnglishDictionary.Controllers
         }
 
         [HttpPost]
-        public IActionResult SearchWord(string Word)
+        public async Task<IActionResult> SearchWord(string Word)
         {
+            EngRusDictionaryModel model = new EngRusDictionaryModel();
+        
             if(Word != null)
             {
-                model = db.EngRusDictionary.FirstOrDefault(Eng => Eng.Word == Word); ;
+                model = await db.EngRusDictionary.FirstOrDefaultAsync(Eng => Eng.Word == Word); ;
                 return RedirectToAction("ResultOfSearch", "EngRusDictionary", model);
             }
             return RedirectToAction("Index", "Home");
 
         }
+
         [HttpGet]
         [Route("~/Dictionary/EngRusDictionary/ResultOfSearch/")]
-        public IActionResult ResultOfSearch(EngRusDictionaryModel eng)
+        public IActionResult ResultOfSearch(EngRusDictionaryModel model)
         {
-            return View(eng);
+            return View(model);
         }
     }
 }

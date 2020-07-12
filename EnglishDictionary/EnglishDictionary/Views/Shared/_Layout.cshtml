@@ -24,21 +24,27 @@ else
                     <li>@DateTime.Now</li>
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="EngRusDictionary" asp-action="SearchWord">EngRusDictionary</a></li>
-                    <li><a asp-controller="RusEngDictionary" asp-action="RusEngDictionary">RusEngDictionary</a></li>
-                    <li><a asp-controller="EngExplanatoryDictionary" asp-action="EngExplanatoryDictionary">EngExplanatoryDictionary</a></li>
-                    <li><a asp-controller="RusExplanatoryDictionary" asp-action="RusExplanatoryDictionary">RusExplanatoryDictionary</a></li>
+                    <li><a asp-controller="RusEngDictionary" asp-action="SearchWord">RusEngDictionary</a></li>
+                    <li><a asp-controller="EngExplanatoryDictionary" asp-action="SearchWord">EngExplanatoryDictionary</a></li>
+                    <li><a asp-controller="RusExplanatoryDictionary" asp-action="SearchWord">RusExplanatoryDictionary</a></li>
+                    @if (userName != "Account")
+                        {
+                            <li><a asp-controller="AddTheWord" asp-action="Add">AddTheWord</a></li>
+                        }
                     <li class="position">
-                        <a asp-controller="Account" asp-action="Login">@userName<i class="fa fa-angle-down"></i></a>
-                        <ul class="submenu">
-                            <li>
-                                <a asp-controller="Account" asp-action="Profile">My profile</a>
-
-                            </li>
-                            <li>
-                                <a asp-controller="Account" asp-action="Exit">Exit</a>
-                            </li>
-                        </ul>
-                    </li>
+                    @if (userName != "Account")
+                        {
+                            <a asp-controller="Account" asp-action="Profile">@userName<i class="fa fa-angle-down"></i></a>
+                            <ul class="submenu">
+                                <li><a asp-controller="Account" asp-action="Profile">My profile</a></li>
+                                <li><a asp-controller="Account" asp-action="Exit">Exit</a></li>
+                            </ul>
+                        }
+                    else
+                        {
+                            <a asp-controller="Account" asp-action="Login">@userName<i class="fa fa-angle-down"></i></a>
+                        }
+                </li>
                 </ul>
             </nav>
         </header>

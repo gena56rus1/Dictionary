@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace EnglishDictionary.Views.RusExplanatoryDictionary
+namespace EnglishDictionary.Views.RusEngDictionary
 {
-    public class RusExplanatoryDictionaryModel : PageModel
+    public class ResultOfSearchModel : PageModel
     {
         public void OnGet()
         {

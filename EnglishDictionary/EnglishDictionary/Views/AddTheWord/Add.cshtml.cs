@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace EnglishDictionary.Views.EngExplanatoryDictionary
+namespace EnglishDictionary.Views.AddTheWord
 {
-    public class EngExplanatoryDictionaryModel : PageModel
+    public class AddModel : PageModel
     {
         public void OnGet()
         {

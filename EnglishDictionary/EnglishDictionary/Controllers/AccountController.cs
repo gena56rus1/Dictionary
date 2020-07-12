@@ -22,7 +22,6 @@ namespace EnglishDictionary.Controllers
             db = context;
         }
 
-
         [HttpGet]
         public IActionResult Login()
         {
@@ -40,7 +39,6 @@ namespace EnglishDictionary.Controllers
                 if (user != null)
                 {
                     await Authenticate(model.Login); // аутентификация
-
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Некорректные логин и(или) пароль");
@@ -98,29 +96,22 @@ namespace EnglishDictionary.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
 
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> Exit()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Account");
         }
         
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile()
         {
-            return View();
-        }
-        //может ошибка в мастере странице
-        [AllowAnonymous]
-        public IActionResult Exit(string returnUrl = null)
-        {
-            if (returnUrl != null)
+            if (User.Identity.Name != null)
             {
-                return LocalRedirect(returnUrl);
+                User user = await db.Users.FirstOrDefaultAsync(u => User.Identity.Name == u.Login);
+                return View(user);
             }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
-        }
 
+            ModelState.AddModelError("", "ошибка");
+            return RedirectToAction("Login", "Account");
+        }
     }
 }
