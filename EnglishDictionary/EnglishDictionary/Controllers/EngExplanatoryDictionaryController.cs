@@ -29,14 +29,12 @@ namespace EnglishDictionary.Controllers
         public async Task<IActionResult> SearchWord(string Word)
         {
             EngExplanatoryDictionaryModel model = new EngExplanatoryDictionaryModel();
-
-            if (Word != null)
+            model = await db.EngExplanatoryDictionaries.FirstOrDefaultAsync(Eng => Eng.Word == Word);
+            if (model != null)
             {
-                model = await db.EngExplanatoryDictionaries.FirstOrDefaultAsync(Eng => Eng.Word == Word);
                 return RedirectToAction("ResultOfSearch", "EngExplanatoryDictionary", model);
             }
-            return RedirectToAction("Index", "Home");
-
+            return Content($"{Word} is not found");
         }
 
         [HttpGet]

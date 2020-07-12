@@ -35,7 +35,7 @@ namespace EnglishDictionary.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Add", "AddTheWord");
             }
-            return RedirectToAction("Index", "Home");
+            return Content($"this {model.Word} is available"); 
         }
         
         [HttpPost]
@@ -49,7 +49,7 @@ namespace EnglishDictionary.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Add", "AddTheWord");
             }
-            return RedirectToAction("Index", "Home");
+            return Content($"this {model.Word} is available");
         }
 
         [HttpPost]
@@ -63,7 +63,7 @@ namespace EnglishDictionary.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Add", "AddTheWord");
             }
-            return RedirectToAction("Index", "Home");
+            return Content($"this {model.Word} is available");
         }
 
         [HttpPost]
@@ -77,9 +77,7 @@ namespace EnglishDictionary.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Add", "AddTheWord");
             }
-            return RedirectToAction("Index", "Home");
+            return Content($"this {model.Word} is available");
         }
-
-       
     }
 }
