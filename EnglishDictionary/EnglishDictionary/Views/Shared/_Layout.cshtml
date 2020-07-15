@@ -16,12 +16,13 @@ else
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>EnglishDictionary</title>
         <link rel="stylesheet" href="~/css/menu.css"/>
+        <script src="~/js/Date.js"></script>
     </head>
     <body>
         <header>
             <nav class="one">
                 <ul class="topmenu">
-                    <li>@DateTime.Now</li>
+                    <li id="current_date_time_block"></li>
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="EngRusDictionary" asp-action="SearchWord">EngRusDictionary</a></li>
                     <li><a asp-controller="RusEngDictionary" asp-action="SearchWord">RusEngDictionary</a></li>
@@ -31,7 +32,7 @@ else
                         {
                             <li><a asp-controller="AddTheWord" asp-action="Add">AddTheWord</a></li>
                         }
-                    <li class="position">
+                    <li>
                     @if (userName != "Account")
                         {
                             <a asp-controller="Account" asp-action="Profile">@userName<i class="fa fa-angle-down"></i></a>

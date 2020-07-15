@@ -26,7 +26,6 @@ a {
 
 .fa {
     font-family: "FontAwesome";
-    color: inherit;
     padding-left: 10px;
 }
 
@@ -45,10 +44,6 @@ a {
 .one ul {
     background: #d3d3d3;
 }
-
-    .one ul a {
-        color: #695753;
-    }
 
 .one .submenu {
     display: none;
