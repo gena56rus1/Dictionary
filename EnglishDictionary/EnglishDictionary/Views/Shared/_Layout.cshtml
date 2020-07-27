@@ -15,39 +15,37 @@ else
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>EnglishDictionary</title>
-        <link rel="stylesheet" href="~/css/menu.css"/>
+        <link rel="stylesheet" href="~/css/menu.css" type="text/css"/>
         <script src="~/js/Date.js"></script>
     </head>
     <body>
         <header>
-            <nav class="one">
-                <ul class="topmenu">
-                    <li id="current_date_time_block"></li>
+            <ul class="navbar">
+                    <a id="current_date_time_block"></a>
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="EngRusDictionary" asp-action="SearchWord">EngRusDictionary</a></li>
                     <li><a asp-controller="RusEngDictionary" asp-action="SearchWord">RusEngDictionary</a></li>
                     <li><a asp-controller="EngExplanatoryDictionary" asp-action="SearchWord">EngExplanatoryDictionary</a></li>
                     <li><a asp-controller="RusExplanatoryDictionary" asp-action="SearchWord">RusExplanatoryDictionary</a></li>
                     @if (userName != "Account")
-                        {
-                            <li><a asp-controller="AddTheWord" asp-action="Add">AddTheWord</a></li>
-                        }
-                    <li>
+                    {
+                        <li><a asp-controller="AddTheWord" asp-action="Add">AddTheWord</a></li>
+                    }
+                <li id="noLeft">
                     @if (userName != "Account")
-                        {
-                            <a asp-controller="Account" asp-action="Profile">@userName<i class="fa fa-angle-down"></i></a>
-                            <ul class="submenu">
-                                <li><a asp-controller="Account" asp-action="Profile">My profile</a></li>
-                                <li><a asp-controller="Account" asp-action="Exit">Exit</a></li>
-                            </ul>
-                        }
+                    {
+                        <a asp-controller="Account" asp-action="Profile">@userName</a>
+                        <ul>
+                            <li><a asp-controller="Account" asp-action="Profile">My profile</a></li>
+                            <li><a asp-controller="Account" asp-action="Exit">Exit</a></li>
+                        </ul>
+                    }
                     else
-                        {
-                            <a asp-controller="Account" asp-action="Login">@userName<i class="fa fa-angle-down"></i></a>
-                        }
+                    {
+                        <a asp-controller="Account" asp-action="Login">@userName</a>
+                    }
                 </li>
-                </ul>
-            </nav>
+            </ul>
         </header>
         <div class="container">
             <main role="main" class="pb-3">

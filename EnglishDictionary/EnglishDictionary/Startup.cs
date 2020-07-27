@@ -7,12 +7,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace EnglishDictionary
 {
     public class Startup
     {
         private string connection;
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -37,6 +39,7 @@ namespace EnglishDictionary
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

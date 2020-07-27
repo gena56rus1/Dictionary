@@ -4,7 +4,10 @@
 <link rel="stylesheet" href="~/css/add.css" />
 
 
-
+<div class="text-center" align="center">
+    <h1 class="display-4">Adding words to the dictionary</h1>
+</div>
+<p>Select a dictionary</p>
 <select onchange="openForm(this)">
     <option></option>
     <option value="1">EngExplanatoryDictionary</option>
@@ -18,11 +21,11 @@
         <form asp-controller="AddTheWord" asp-action="AddEngExplanatoryDictionary">
             <div class="form-group">
                 <label class="control-label">Word</label>
-                <input type="text" name="Word" class="form-control" pattern="^[a-zA-Z]+$"/>
+                <input type="text" name="Word" class="form-control" pattern="^[a-zA-Z]+$" />
             </div>
             <div class="form-group">
                 <label class="control-label">Interpretation</label>
-                <input type="text" name="Interpretation" class="form-control pattern="^[a-zA-Z]+$"" />
+                <input type="text" name="Interpretation" class="form-control pattern=" ^[a-zA-Z]+$"" />
             </div>
             <div class="form-group">
                 <input type="submit" value="send" clфass="btn btn-default" />
@@ -34,15 +37,15 @@
         <form asp-controller="AddTheWord" asp-action="AddEngRusDictionary">
             <div class="form-group">
                 <label class="control-label">Word</label>
-                <input type="text" name="Word" class="form-control" pattern="^[a-zA-Z]+$"/>
+                <input type="text" name="Word" class="form-control" pattern="^[a-zA-Z]+$" />
             </div>
             <div class="form-group">
                 <label class="control-label">Transcription</label>
-                <input type="text" name="Transcription" class="form-control" pattern="^[a-zA-Z]+$"/>
+                <input type="text" name="Transcription" class="form-control" pattern="^[a-zA-Z]+$" />
             </div>
             <div class="form-group">
                 <label class="control-label">Translation</label>
-                <input type="text" name="Translation" class="form-control" pattern="^[А-Яа-яЁё]+$"/>
+                <input type="text" name="Translation" class="form-control" pattern="^[А-Яа-яЁё]+$" />
             </div>
             <div class="form-group">
                 <input type="submit" value="send" class="btn btn-default" />
@@ -54,14 +57,14 @@
         <form asp-controller="AddTheWord" asp-action="AddRusExplanatoryDictionary">
             <div class="form-group">
                 <label class="control-label">Word</label>
-                <input type="text" name="Word" class="form-control" pattern="^[А-Яа-яЁё]+$"/>
+                <input type="text" name="Word" class="form-control" pattern="^[А-Яа-яЁё]+$" />
             </div>
             <div class="form-group">
                 <label class="control-label">Interpretation</label>
-                <input type="text" name="Interpretation" class="form-control" pattern="^[А-Яа-яЁё]+$"/>
+                <input type="text" name="Interpretation" class="form-control" pattern="^[А-Яа-яЁё]+$" />
             </div>
             <div class="form-group">
-                <input type="submit" value="send" class="btn btn-default"/>
+                <input type="submit" value="send" class="btn btn-default" />
             </div>
         </form>
     </div>
@@ -70,11 +73,11 @@
         <form asp-controller="AddTheWord" asp-action="AddRusEngDictionary">
             <div class="form-group">
                 <label class="control-label">Word</label>
-                <input type="text" name="Word" class="form-control" pattern="^[А-Яа-яЁё]+$"/>
+                <input type="text" name="Word" class="form-control" pattern="^[А-Яа-яЁё]+$" />
             </div>
             <div class="form-group">
                 <label class="control-label">Transcription</label>
-                <input type="text" name="Transcription" class="form-control" pattern="^[А-Яа-яЁё]+$"/>
+                <input type="text" name="Transcription" class="form-control" pattern="^[А-Яа-яЁё]+$" />
             </div>
             <div class="form-group">
                 <label class="control-label">Translation</label>
